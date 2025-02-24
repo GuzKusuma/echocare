@@ -35,7 +35,7 @@ export default function Home() {
           }}
           className="dot-1 "
         >
-          <img
+          <Image
             src="/dot.png"
             alt=""
             width={70}
@@ -125,7 +125,7 @@ export default function Home() {
             }}
             className="dot-2 "
           >
-            <img
+            <Image
               src="/dot.png"
               alt=""
               width={70}
@@ -155,7 +155,7 @@ export default function Home() {
             }}
             className="dot-3 "
           >
-            <img
+            <Image
               src="/dot.png"
               alt=""
               width={70}
@@ -182,10 +182,10 @@ export default function Home() {
             </div>
           </div>
 
-          <img
+          <Image
             className="z-[-1]"
             width={300}
-            height={"auto"}
+
             src="/heart.png"
             alt="gambar jantung"
             loading="lazy"
@@ -263,7 +263,7 @@ export default function Home() {
                 className="flex flex-col text-black rounded-xl w-[300px] h-[300px]  bg-white drop-shadow-xl p-4 gap-10"
               >
                 <div className="flex justify-start">
-                  <img src={card.img} width={40} height={50} alt={card.title} />
+                  <Image src={card.img} width={40} height={50} alt={card.title} />
                 </div>
                 <div className="flex flex-col">
                   <h2 className="font-bold text-xl">{card.title}</h2>
@@ -293,7 +293,7 @@ export default function Home() {
               },
             }}
           >
-            <img src="blob.png" alt="" />
+            <Image src="blob.png" alt="" />
           </motion.div>
         </div>
         {/* MPV video */}
@@ -331,7 +331,7 @@ export default function Home() {
 
         <div className="footer bg-[#39C1C7]  h-[350px] overflow-y-auto bottom-0 mt-20 px-8 pt-9 justify-center z-0 ">
           <div className="dot-4 ">
-            <img
+            <Image
               src="/dot-white.png"
               alt=""
               width={70}
@@ -343,7 +343,7 @@ export default function Home() {
           <div className="flex flex-row gap-10 flex-wrap text-white">
             <div className="flex flex-col gap-3 flex-1">
               <div className="flex flex-row gap-3  ">
-                <img
+                <Image
                   src="/echocaresm.png"
                   width={30}
                   height={30}
