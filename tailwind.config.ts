@@ -8,6 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+  
+      fontFamily: { 
+        sans: ["var(--font-poppins)", "sans-serif"],
+       },
+      screens: {
+        xsm: { max: "640px" },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
