@@ -186,15 +186,16 @@ export default function Home() {
           <img
             className="z-[-1]"
             width={300}
-            height={"auto"}
-            src="/heart.png"
+            height={300}
+            src="/Heart.png"
+            draggable="false"
             alt="gambar jantung"
             loading="lazy"
           />
         </motion.div>
 
         {/* Cards Section */}
-        <div className="flex flex-col items-center justify-center relative mt-[12.3rem]">
+        <div className="flex flex-col items-center justify-center relative mt-[10.3rem]">
           <motion.div
             ref={scrollRef}
             initial="hidden"
@@ -264,7 +265,7 @@ export default function Home() {
                 className="flex flex-col text-black rounded-xl w-[300px] h-[300px]  bg-white drop-shadow-xl p-4 gap-10"
               >
                 <div className="flex justify-start">
-                  <img src={card.img} width={40} height={50} alt={card.title} />
+                  <img loading="lazy" src={card.img} width={40} height={50} alt={card.title} />
                 </div>
                 <div className="flex flex-col">
                   <h2 className="font-bold text-xl">{card.title}</h2>
@@ -294,7 +295,7 @@ export default function Home() {
               },
             }}
           >
-            <img src="blob.png" alt="" />
+            <img loading="lazy" src="blob.png" alt="" />
           </motion.div>
         </div>
         {/* MPV video */}
@@ -305,7 +306,7 @@ export default function Home() {
             <div className="line w-10 h-[3px] rounded-md bg-slate-300 "></div>
           </div>
           <motion.video
-            className="videoMPV"
+            className="videoMPV shadow-xl"
             width={600}
             controls
             src="Echocare.mp4"
