@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useRef, useState } from "react";
 import Image from "next/image";
@@ -7,7 +8,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const scrollRef = useRef(null);
-
+  
   return (
     <>
       <Head>
@@ -35,7 +36,7 @@ export default function Home() {
           }}
           className="dot-1 "
         >
-          <Image
+          <img
             src="/dot.png"
             alt=""
             width={70}
@@ -125,7 +126,7 @@ export default function Home() {
             }}
             className="dot-2 "
           >
-            <Image
+            <img
               src="/dot.png"
               alt=""
               width={70}
@@ -155,7 +156,7 @@ export default function Home() {
             }}
             className="dot-3 "
           >
-            <Image
+            <img
               src="/dot.png"
               alt=""
               width={70}
@@ -182,10 +183,10 @@ export default function Home() {
             </div>
           </div>
 
-          <Image
+          <img
             className="z-[-1]"
             width={300}
-
+            height={"auto"}
             src="/heart.png"
             alt="gambar jantung"
             loading="lazy"
@@ -263,7 +264,7 @@ export default function Home() {
                 className="flex flex-col text-black rounded-xl w-[300px] h-[300px]  bg-white drop-shadow-xl p-4 gap-10"
               >
                 <div className="flex justify-start">
-                  <Image src={card.img} width={40} height={50} alt={card.title} />
+                  <img src={card.img} width={40} height={50} alt={card.title} />
                 </div>
                 <div className="flex flex-col">
                   <h2 className="font-bold text-xl">{card.title}</h2>
@@ -293,7 +294,7 @@ export default function Home() {
               },
             }}
           >
-            <Image src="blob.png" alt="" />
+            <img src="blob.png" alt="" />
           </motion.div>
         </div>
         {/* MPV video */}
@@ -331,7 +332,7 @@ export default function Home() {
 
         <div className="footer bg-[#39C1C7]  h-[350px] overflow-y-auto bottom-0 mt-20 px-8 pt-9 justify-center z-0 ">
           <div className="dot-4 ">
-            <Image
+            <img
               src="/dot-white.png"
               alt=""
               width={70}
@@ -343,7 +344,7 @@ export default function Home() {
           <div className="flex flex-row gap-10 flex-wrap text-white">
             <div className="flex flex-col gap-3 flex-1">
               <div className="flex flex-row gap-3  ">
-                <Image
+                <img
                   src="/echocaresm.png"
                   width={30}
                   height={30}
@@ -385,3 +386,4 @@ export default function Home() {
     </>
   );
 }
+/* eslint-enable @next/next/no-img-element */
