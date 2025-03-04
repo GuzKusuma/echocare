@@ -23,6 +23,7 @@ body {
   .background-img {
     display: none;
   }
+  
 }
 
 .videoMPV {
@@ -53,6 +54,8 @@ body {
    width: 50vw !important;
    left: 25%  !important;
    }
+
+
  }
 
 

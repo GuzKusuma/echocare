@@ -387,7 +387,7 @@ export default function Home() {
           }} className="max-w-lg mx-auto p-4 mt-40">
         <div className="text-line flex flex-row items-center justify-center gap-5 mb-10">
             <div className="line w-10 h-[3px] rounded-md bg-slate-300 "></div>
-            <h1 className="text-black font-bold text-2xl"> Frequently Ask Question</h1>
+            <h1 className="text-black font-bold text-2xl text-center"> Frequently Ask Question</h1>
             <div className="line w-10 h-[3px] rounded-md bg-slate-300 "></div>
           </div>
           {item.map((item, index) => (
@@ -429,9 +429,9 @@ export default function Home() {
               draggable="false"
             />
           </div>
-          <div className="flex flex-row gap-10 flex-wrap text-white">
-            <div className="flex flex-col gap-3 flex-1">
-              <div className="flex flex-row gap-3  ">
+          <div className="flex flex-row gap-10  xsm:flex-wrap text-white ">
+            <div className="footer-content flex flex-col gap-3 flex-grow-0 ">
+              <div className="flex flex-row gap-3 ">
                 <img
                   src="/echocaresm.png"
                   width={30}
@@ -442,8 +442,8 @@ export default function Home() {
               </div>
               <p className="text-sm font-light">
                 Echocare delivers innovative, AI-powered heart and lung health
-                monitoring solutions, accessible anytime, anywhere through web
-                and mobile platforms
+                <br /> monitoring solutions, accessible anytime, anywhere through web
+                <br /> and mobile platforms
               </p>
               <p className="mt-5 text-sm font-light ">
                 ©Echocare 2025. All rights reserved
