@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 "use client";
 import { useRef, useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { title } from "process";
-import { div } from "framer-motion/client";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,6 +12,7 @@ export default function Home() {
 
   const [openIndex, setOpenIndex] = useState(null);
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Accordion = (index: any) => {
     setOpenIndex(openIndex === index ? null : index);
   };
