@@ -21,7 +21,7 @@ export default function Home() {
     {
       title: "what is this product?",
       content:
-        "This is a digital stethoscope with AI and IoT technology to monitor heart health.",
+        "Echocare Scanner is a compact and user-friendly digital stethoscope that uses AI and IoT technology to monitor heart health anytime, anywhere.",
     },
     {
       title: "How does it work?",
