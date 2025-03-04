@@ -4,11 +4,42 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import { motion } from "framer-motion";
+import { title } from "process";
+import { div } from "framer-motion/client";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const scrollRef = useRef(null);
-  
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const Accordion = (index: any) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const item = [
+    {
+      title: "what is this product?",
+      content:
+        "This is a digital stethoscope with AI and IoT technology to monitor heart health.",
+    },
+    {
+      title: "How does it work?",
+      content:
+        "It captures heart sounds and analyzes them using AI to detect cardiovascular issues.",
+    },
+    {
+      title: "Is my health data secure?",
+      content:
+        "yes, we use high-level encryption to protect all user data. Only you have full access to your health records",
+    },
+    {
+      title: "Do i need to see a doctor to use this device?",
+      content:
+        "No, Echocare is designed for home use. However, if the analysis detects any serious health concerns, we recommend consulting a doctor.",
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -265,7 +296,13 @@ export default function Home() {
                 className="flex flex-col text-black rounded-xl w-[300px] h-[300px]  bg-white drop-shadow-xl p-4 gap-10"
               >
                 <div className="flex justify-start">
-                  <img loading="lazy" src={card.img} width={40} height={50} alt={card.title} />
+                  <img
+                    loading="lazy"
+                    src={card.img}
+                    width={40}
+                    height={50}
+                    alt={card.title}
+                  />
                 </div>
                 <div className="flex flex-col">
                   <h2 className="font-bold text-xl">{card.title}</h2>
@@ -331,6 +368,56 @@ export default function Home() {
           </motion.video>
         </div>
 
+        <motion.div   ref={scrollRef}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }} // Elemen mulai animasi saat 20% terlihat di viewport
+          variants={{
+            hidden: { opacity: 0, y: 100, scale: 0.9 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              // Efek sedikit bergetar saat muncul
+              transition: {
+                duration: 1.2, // Memperpanjang durasi agar lebih dramatis
+                ease: "easeInOut", // Efek smooth saat muncul
+                delay: 0.2, // Memberikan jeda sebelum animasi dimulai
+              },
+            },
+          }} className="max-w-lg mx-auto p-4 mt-40">
+        <div className="text-line flex flex-row items-center justify-center gap-5 mb-10">
+            <div className="line w-10 h-[3px] rounded-md bg-slate-300 "></div>
+            <h1 className="text-black font-bold text-2xl"> Frequently Ask Question</h1>
+            <div className="line w-10 h-[3px] rounded-md bg-slate-300 "></div>
+          </div>
+          {item.map((item, index) => (
+            <div key={index} className="border border-slate-600 rounded-lg mb-4 ">
+              <button
+                className="w-full text-slate-700 text-left py-3 flex justify-between items-center font-medium text-lg p-5 "
+                onClick={() => Accordion(index)}
+              >
+                {item.title}
+
+                <span
+                  className={`transition-transform ${
+                    openIndex === index ? "rotate-180" : "rotate-0"
+                  }`}
+                >
+                  ▼
+                </span>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? "max-h-40" : "max-h-0"
+                }`}
+              >
+                <p className="px-4 pb-3 text-gray-600">{item.content}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* footer */}
         <div className="footer bg-[#39C1C7]  h-[350px] overflow-y-auto bottom-0 mt-20 px-8 pt-9 justify-center z-0 ">
           <div className="dot-4 ">
             <img
